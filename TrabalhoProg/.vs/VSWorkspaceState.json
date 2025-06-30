@@ -1,13 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Modelo",
-    "\\Modelo\\bin",
-    "\\Modelo\\obj",
     "\\TrabalhoProg",
-    "\\TrabalhoProg\\Controllers",
-    "\\TrabalhoProg\\Views"
+    "\\TrabalhoProg\\Views",
+    "\\TrabalhoProg\\Views\\Shared"
   ],
-  "SelectedNode": "\\TrabalhoProg\\Program.cs",
+  "SelectedNode": "\\TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

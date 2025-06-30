@@ -56,24 +56,21 @@ static void FillCustomerData() {
     }
 }
 
-static void FillPropertyData()
+static void FillAddressData()
 {
-    for (int i = 1; i <= 9; i++)
+    for (int i = 1; i <= 6; i++)
     {
-        Property property = new Property()
+        Address address = new()
         {
-            PropertyId = i,
-            BindingAddress = new Address()
-            {
-                AddressId = i,
-                Street = $"Rua de ca",
-                Street1 = $"Rua de la",
-                City = $"Essa cidade aqui",
-                State = $"O estado liquido",
-                PostalCode = $"89560-000",
-                Country = $"Brazil"
-            }
+            AddressId = i,
+            City = "Videira",
+            Country = "Brazil",
+            State = "Santa-Catarina",
+            PostalCode = "99999-99",
+            Street = "Esse daqui",
+            Street1 = "Aquela la ó",
         };
-        PropertyData.Properties.Add(property);
+        AddressData.Addresses.Add(address);
     }
+    ;
 }
