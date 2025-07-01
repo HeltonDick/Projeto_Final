@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.DataProtection.Repositories;
 using TrabalhoProg.Models;
-using TrabalhoProg.r
+using TrabalhoProg.Repository;
+using TrabalhoProg.Modelo;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,8 +32,9 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 FillCustomerData();
+FillAddressData();
+FillCategoryData();
 FillPropertyData();
-
 app.Run();
 
 static void FillCustomerData() {
@@ -41,7 +43,7 @@ static void FillCustomerData() {
         {
             CustomerId = i,
             Name = $"Customer {i}",
-            BindingAddress = new Address()
+            Address = new Address()
             {
                 AddressId = i,
                 Street = $"Rua de ca",
@@ -54,6 +56,19 @@ static void FillCustomerData() {
         };
 
         CustomerData.Customers.Add(customer);
+    }
+}
+
+static void FillCategoryData()
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        Category category = new()
+        {
+            CategoryId = i,
+            Name = $"Category {i}"
+        };
+        CategoryData.Categories.Add(category);
     }
 }
 
@@ -74,4 +89,23 @@ static void FillAddressData()
         AddressData.Addresses.Add(address);
     }
     ;
+}
+
+static void FillPropertyData()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        Property property = new()
+        {
+            PropertyId = i,
+            Name = $"Casa do elto",
+            Description = $"era uma casa muito engracado",
+            BedRooms = 3,
+            GarageVacancies = 1,
+            CurrentPricePerNight = 100,
+            Address = AddressData.Addresses[i % AddressData.Addresses.Count],
+            Category = CategoryData.Categories[i % CategoryData.Categories.Count]
+        };
+        PropertyData.RealStates.Add(property);
+    }
 }

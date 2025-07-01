@@ -1,4 +1,4 @@
-﻿﻿@model List<Modelo.Category>
+﻿@model List<TrabalhoProg.Modelo.Category>;
 
     @{
     ViewData["Title"] = "Pagina Principal";
@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Modelo.Category category in Model)
+            @foreach (TrabalhoProg.Modelo.Category category in Model)
             {
             <tr>
                 <td>@category.CategoryId</td>

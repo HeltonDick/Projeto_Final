@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-
 using TrabalhoProg.Modelo;
+using TrabalhoProg.Repository;
 
 
 namespace TrabalhoProg.Controllers
@@ -19,7 +19,7 @@ namespace TrabalhoProg.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<Address> addresses = _AddressRepository.RetrieveAll();
+            List<Address> addresses = _addressRepository.RetrieveAll();
 
             return View(addresses);
         }
@@ -35,10 +35,10 @@ namespace TrabalhoProg.Controllers
         [HttpPost]
         public IActionResult Create(Address address)
         {
-            _AddressRepository.Save(address);
+            _addressRepository.Save(address);
 
             List<Address> addresses =
-                _AddressRepository.RetrieveAll();
+                _addressRepository.RetrieveAll();
 
             return View("Index", addresses);
         }
@@ -46,16 +46,16 @@ namespace TrabalhoProg.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            _AddressRepository.DeleteById(id);
-            var realState = _AddressRepository.RetrieveAll();
+            _addressRepository.DeleteById(id);
+            var realState = _addressRepository.RetrieveAll();
             return View("Index", realState);
         }
 
         [HttpPost]
         public IActionResult Update(Address address)
         {
-            _AddressRepository.Update(address);
-            var addresses = _AddressRepository.RetrieveAll();
+            _addressRepository.Update(address);
+            var addresses = _addressRepository.RetrieveAll();
             return View("Index", addresses);
         }
     }

@@ -11,52 +11,59 @@ namespace TrabalhoProg.Controllers
 
         private CustomerRepository _customerRepository;
 
-        public CustomerController(IWebHostEnvironment environment, CustomerRepository customerRepository) {
-            this.environment = environment;
+        public CustomerController(
+            IWebHostEnvironment environment
+        )
+        {
             _customerRepository = new CustomerRepository();
+            this.environment = environment;
         }
 
         [HttpGet]
-        public IActionResult Index() {
-            List<Customer> customers = _customerRepository.RetrieveAll();
+        public IActionResult Index()
+        {
+            List<Customer> customers =
+                _customerRepository.RetrieveAll();
 
             return View(customers);
         }
 
-        [HttpGet]
-        public IActionResult Create() 
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult Create() 
+        public IActionResult Create(Customer c)
         {
             _customerRepository.Save(c);
 
-            List<Customer> customers = _customerRepository.RetrieveAll();
+            List<Customer> customers =
+                _customerRepository.RetrieveAll();
 
             return View("Index", customers);
         }
 
         [HttpGet]
-        public IActionResult ExportDelimitatedFile() {
-            string fileContent = string.empty;
+        public IActionResult Create()
+        {
+            return View();
+        }
 
-            foreach (Customer c in CustomerData.customers)
+        [HttpGet]
+        public IActionResult ExportDelimitedFile()
+        {
+            string fileContent = string.Empty;
+            foreach (Customer c in CustomerData.Customers)
             {
-                fileContent = +$"{c.CustomerId};{c.Name};{c.Email};{c.Phone};{c.Address.AddressId};" +
-                    $"{c.Address.Street};{c.Address.Street1};{c.Address.City};{c.Address.State};" +
-                    $"{c.Address.PostalCode};{c.Address.Country})\n";
-
-                SaveFile(fileContent, "DelimitatedFile.txt");
-
-                return View();
+                fileContent +=
+                    $"{c.CustomerId};{c.Name};{c.Email};{c.Phone};" +
+                    $"{c.Address!.AddressId};{c.Address!.Street};" +
+                    $"{c.Address!.Street1};{c.Address!.City};" +
+                    $"{c.Address!.State};{c.Address!.PostalCode};" +
+                    $"{c.Address!.Country}\n";
             }
+            SaveFile(fileContent, "DelimitedFile.txt");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult ExportDelimitatedFile()
+        public IActionResult ExportFixedFile()
         {
             string fileContent = string.Empty;
             foreach (Customer c in CustomerData.Customers)
@@ -103,7 +110,6 @@ namespace TrabalhoProg.Controllers
 
             return RedirectToAction("Index");
         }
-
 
         private bool SaveFile(string content, string fileName)
         {

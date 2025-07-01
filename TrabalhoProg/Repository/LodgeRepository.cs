@@ -1,7 +1,9 @@
 ﻿using TrabalhoProg.Modelo;
 
-namespace TrabalhoProg.Repository {
-    public class LodgeRepository {
+namespace TrabalhoProg.Repository
+{
+    public class LodgeRepository
+    {
         public Lodge Retrieve(int id)
         {
             foreach (Lodge l in CustomerData.Lodges)
@@ -29,3 +31,24 @@ namespace TrabalhoProg.Repository {
                 return Delete(lodge);
             return false;
         }
+
+        public void Save(Lodge lodge)
+        {
+            lodge.LodgeId = GetCount() + 1;
+            CustomerData.Lodges.Add(lodge);
+        }
+
+        public int GetCount()
+        {
+            return CustomerData.Lodges.Count;
+        }
+
+        public void Update(Lodge newLodge)
+        {
+            Lodge oldLodge = Retrieve(newLodge.LodgeId);
+            oldLodge.Customer = newLodge.Customer;
+            oldLodge.LodgeDate = newLodge.LodgeDate;
+            oldLodge.LodgeProperty = newLodge.LodgeProperty;
+        }
+    }
+}

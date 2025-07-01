@@ -1,4 +1,4 @@
-﻿﻿@model List<Modelo.Property>
+﻿@model List<TrabalhoProg.Modelo.Property>;
 
     @{
     ViewData["Title"] = "Pagina Principal";
@@ -11,7 +11,7 @@
         Deletar Propriedade
     </a>
 
-    @if (Model.Count > 0)
+@if (Model.Count > 0)
 {
     <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Modelo.Property property in Model)
+            @foreach (TrabalhoProg.Modelo.Property property in Model)
             {
             <tr>
                 <td>@property.PropertyId</td>

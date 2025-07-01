@@ -1,5 +1,5 @@
-﻿using Modelo;
-using Repository;
+﻿using TrabalhoProg.Modelo;
+using TrabalhoProg.Repository;
 
 namespace TrabalhoProg.ViewModels
 {

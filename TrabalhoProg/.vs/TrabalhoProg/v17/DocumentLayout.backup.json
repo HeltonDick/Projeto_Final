@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\",
+  "WorkspaceRootPath": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\trabalhoprog\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\address\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\address\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\trabalhoprog\\trabalhoprog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\trabalhoprog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\lodgeproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\lodgeproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\property\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\property\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\lodge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\lodge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\modelo\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\modelo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\modelo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\customer\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\customer\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\address\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\address\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\helto\\onedrive\\\u00E1rea de trabalho\\projeto_final\\trabalhoprog\\trabalhoprog\\views\\property\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\views\\property\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrabalhoProg",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\TrabalhoProg.csproj",
-              "RelativeDocumentMoniker": "TrabalhoProg\\TrabalhoProg.csproj",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\TrabalhoProg.csproj",
-              "RelativeToolTip": "TrabalhoProg\\TrabalhoProg.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-01T01:06:05.509Z",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Address\\Create.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Address\\Create.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Address\\Create.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Address\\Create.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:37:10.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Address\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Address\\Index.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Address\\Index.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Address\\Index.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAmwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:08:34.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Property.cs",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Property.cs",
-              "RelativeDocumentMoniker": "Modelo\\Property.cs",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Property.cs",
-              "RelativeToolTip": "Modelo\\Property.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T01:06:01.837Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Category\\Create.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Category\\Create.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:08:25.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:08:15.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LodgeProperty.cs",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\LodgeProperty.cs",
-              "RelativeDocumentMoniker": "Modelo\\LodgeProperty.cs",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\LodgeProperty.cs",
-              "RelativeToolTip": "Modelo\\LodgeProperty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T01:06:01.134Z",
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Property\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Property\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Property\\Delete.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Property\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:07:13.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Property\\Create.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Property\\Create.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Property\\Create.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Property\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T21:05:59.284Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Lodge.cs",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Lodge.cs",
-              "RelativeDocumentMoniker": "Modelo\\Lodge.cs",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Lodge.cs",
-              "RelativeToolTip": "Modelo\\Lodge.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\Modelo\\Customer.cs",
+              "RelativeDocumentMoniker": "Modelo\\Customer.cs",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\Modelo\\Customer.cs",
+              "RelativeToolTip": "Modelo\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T01:06:00.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "TrabalhoProg\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "TrabalhoProg\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T01:05:00.78Z",
+              "WhenOpened": "2025-07-01T20:59:48.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Modelo",
-              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Modelo.csproj",
-              "RelativeDocumentMoniker": "Modelo\\Modelo.csproj",
-              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Modelo.csproj",
-              "RelativeToolTip": "Modelo\\Modelo.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-01T01:04:54.158Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Customer\\Create.cshtml",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Customer\\Create.cshtml",
+              "ToolTip": "C:\\Users\\helto\\OneDrive\\\u00C1rea de Trabalho\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Views\\Customer\\Create.cshtml",
+              "RelativeToolTip": "TrabalhoProg\\Views\\Customer\\Create.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T20:57:39.549Z",
               "EditorCaption": ""
             }
           ]

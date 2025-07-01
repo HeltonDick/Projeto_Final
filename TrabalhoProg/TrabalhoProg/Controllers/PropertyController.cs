@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+using TrabalhoProg.ViewModels;
+using TrabalhoProg.Repository;
+using TrabalhoProg.Modelo;
 
 namespace TrabalhoProg.Controllers
 {
@@ -69,7 +69,7 @@ namespace TrabalhoProg.Controllers
         {
             string fileContent = string.Empty;
 
-            foreach (Property c in PropertyData.Imoveis) {
+            foreach (Property c in PropertyData.RealStates) {
                 fileContent +=
                     $"{c.PropertyId};{c.Name};{c.Description};{c.BedRooms};" +
                     $"{c.GarageVacancies};{c.CurrentPricePerNight};{c.Category?.Name};" +
@@ -91,7 +91,7 @@ namespace TrabalhoProg.Controllers
                 return false;
 
             var path = Path.Combine(
-                _environment.WebRootPath,
+                environment.WebRootPath,
                 "TextFiles"
             );
 

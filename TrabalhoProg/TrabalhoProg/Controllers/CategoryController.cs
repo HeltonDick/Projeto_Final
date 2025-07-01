@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+using TrabalhoProg.Repository;
+using TrabalhoProg.Modelo;
 
 namespace TrabalhoProg.Controllers
 {
@@ -13,7 +12,7 @@ namespace TrabalhoProg.Controllers
         public CategoryController(IWebHostEnvironment environment)
         {
             this.environment = environment;
-            _categoryRepository = categoryRepository;
+            _categoryRepository = new CategoryRepository();
         }
 
         [HttpGet]
@@ -34,10 +33,10 @@ namespace TrabalhoProg.Controllers
         {
             _categoryRepository.Save(category);
 
-            List<Category> category =
+            List<Category> categories =
                 _categoryRepository.RetrieveAll();
 
-            return View("Index", category);
+            return View("Index", categories);
         }
 
         [HttpGet]

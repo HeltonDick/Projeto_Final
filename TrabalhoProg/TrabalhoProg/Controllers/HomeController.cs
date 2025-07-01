@@ -1,15 +1,15 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using TrabalhoProg.Modelo;
 using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+using TrabalhoProg.Repository;
 
 namespace TrabalhoProg.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private Loadge _lodge
+        private Lodge _lodge;
 
         public HomeController(ILogger<HomeController> logger)
         {

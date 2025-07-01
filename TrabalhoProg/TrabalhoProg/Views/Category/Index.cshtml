@@ -1,4 +1,4 @@
-﻿﻿@model List<Modelo.Category>
+﻿@model List<TrabalhoProg.Modelo.Category>;
 
     @{
     ViewData["Title"] = "Pagina Principal";
@@ -18,14 +18,16 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Descricao</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (Modelo.Category category in Model)
+            @foreach (TrabalhoProg.Modelo.Category category in Model)
             {
             <tr>
                 <td>@category.CategoryId</td>
                 <td>@category.Name</td>
+                <td>@category.Description</td>
 
                 <td>
                     <a asp-action="Delete" asp-controller="Category" asp-route-id="@category.CategoryId" title="Excluir Categoria @category.Name">

@@ -1,4 +1,4 @@
-﻿@model Modelo.Address
+﻿@model TrabalhoProg.Modelo.Address
 
 @{
     ViewData["Title"] = "Criar um novo endereco";
@@ -18,11 +18,11 @@
                     <input type="text" class="form-control" asp-for="@Model.State" />
                     <label asp-for="@Model.City">Cidade:</label>
                     <input type="text" class="form-control" asp-for="@Model.City" />
-                    <label asp-for="@Model.Street">Estado:</label>
+                    <label asp-for="@Model.Street">Rua:</label>
                     <input type="text" class="form-control" asp-for="@Model.Street" />
-                    <label asp-for="@Model.Street1">Estado:</label>
+                    <label asp-for="@Model.Street1">Rua1:</label>
                     <input type="text" class="form-control" asp-for="@Model.Street1" />
-                    <label asp-for="@Model.PostalCode">Estado:</label>
+                    <label asp-for="@Model.PostalCode">CodigoPostal:</label>
                     <input type="text" class="form-control" asp-for="@Model.PostalCode" />
                 </div>
             </div>

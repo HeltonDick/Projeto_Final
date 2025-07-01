@@ -1,5 +1,4 @@
-﻿
-namespace TrabalhoProg.Modelo
+﻿namespace TrabalhoProg.Modelo
 {
     public class Lodge
     {
@@ -21,7 +20,7 @@ namespace TrabalhoProg.Modelo
             this.LodgeId = lodgeId;
         }
 
-        public class Save(Lodge lodge) {
+        public void Save(Lodge lodge) {
         }
 
         public Lodge Retrieve(int LodgeId) {

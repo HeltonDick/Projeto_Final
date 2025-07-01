@@ -1,4 +1,4 @@
-﻿@model Modelo.Property
+﻿@model TrabalhoProg.ViewModels.PropertyViewModel;
 
 @{
     ViewData["Title"] = "Criar uma nova propriedade";
@@ -12,18 +12,38 @@
         <form id="formProperty" method="post" asp-action="Create" asp-controller="Property">
             <div class="row">
                 <div class="form-group">
-                    <label asp-for="@Model.Name">País:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Name" />
-                    <label asp-for="@Model.Description">Estado:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Description" />
-                    <label asp-for="@Model.BedRooms">Cidade:</label>
-                    <input type="text" class="form-control" asp-for="@Model.BedRooms" />
-                    <label asp-for="@Model.GarageVacancies">Estado:</label>
-                    <input type="text" class="form-control" asp-for="@Model.GarageVacancies" />
-                    <label asp-for="@Model.Address.AddressId">Estado:</label>
-                    <input type="text" class="form-control" asp-for="@Model.AddressId" />
-                    <label asp-for="@Model.Category.CategoryId">Estado:</label>
-                    <input type="text" class="form-control" asp-for="@Model.CategoryId" />
+                    <label asp-for="Property.Name">Nome:</label>
+                    <input type="text" class="form-control" asp-for="Property.Name" />
+
+                    <label asp-for="Property.Description">Descrição:</label>
+                    <input type="text" class="form-control" asp-for="Property.Description" />
+
+                    <label asp-for="Property.BedRooms">Quartos:</label>
+                    <input type="number" class="form-control" asp-for="Property.BedRooms" />
+
+                    <label asp-for="Property.GarageVacancies">Vagas de Garagem:</label>
+                    <input type="number" class="form-control" asp-for="Property.GarageVacancies" />
+
+                    <hr />
+
+                    <h4>Endereço</h4>
+                    <label asp-for="Property.Address.Street">Rua:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.Street" />
+
+                    <label asp-for="Property.Address.Street1">Número/Complemento:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.Street1" />
+
+                    <label asp-for="Property.Address.City">Cidade:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.City" />
+
+                    <label asp-for="Property.Address.State">Estado:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.State" />
+
+                    <label asp-for="Property.Address.PostalCode">CEP:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.PostalCode" />
+
+                    <label asp-for="Property.Address.Country">País:</label>
+                    <input type="text" class="form-control" asp-for="Property.Address.Country" />
                 </div>
             </div>
 

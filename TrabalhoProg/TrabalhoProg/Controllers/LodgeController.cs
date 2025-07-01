@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+using TrabalhoProg.Modelo;
+using TrabalhoProg.Repository;
+using TrabalhoProg.ViewModels;
 
 namespace TrabalhoProg.Controllers
 {
@@ -16,9 +16,9 @@ namespace TrabalhoProg.Controllers
         public LodgeController(IWebHostEnvironment environment)
         {
             this.environment = environment;
-            _lodgeRepository = new LodgeRepository;
-            _customerRepository = new CustomerRepository;
-            _propertyRepository = new PropertyRepository;
+            _lodgeRepository = new LodgeRepository();
+            _customerRepository = new CustomerRepository();
+            _propertyRepository = new PropertyRepository();
         }
 
         [HttpGet]
@@ -30,14 +30,14 @@ namespace TrabalhoProg.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            LodgeRepository viewModel = new();
+            LodgeViewModel viewModel = new();
             viewModel.Customers = _customerRepository.RetrieveAll();
 
             var properties = _propertyRepository.RetrieveAll();
-            List<SelectedLodge> items = new List<SelectedLodge>();
+            List<SelectedLodge> lodges = new List<SelectedLodge>();
             foreach (var property in properties)
             {
-                items.Add(new SelectedLodge()
+                lodges.Add(new SelectedLodge()
                 {
                     LodgeProperty = new()
                     {
@@ -51,14 +51,33 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Lodge lodge)
+        public IActionResult Create(LodgeViewModel model)
         {
-            if (ModelState.IsValid)
+            Lodge lodge = new Lodge();
+            lodge.Customer =
+                _customerRepository.Retrieve(model.CustomerId!.Value);
+            lodge.LodgeDate = DateTime.Now;
+
+            int count = 1;
+            foreach (var property in model.SelectedLodge!)
             {
-                _lodgeRepository.Save(lodge);
-                return RedirectToAction("Index");
+                if (property.IsSelected)
+                {
+                    lodge.LodgeProperty!.Add(
+                        new LodgeProperty()
+                        {
+                            LodgePropertyId = count,
+                            Property = _propertyRepository.Retrieve(property.LodgeProperty.Property!.PropertyId),
+                            PricePerNight = property.LodgeProperty.PricePerNight,
+                        }
+                    );
+                    count++;
+                }
             }
-            return View(lodge);
+            _lodgeRepository.Save(lodge);
+            return RedirectToAction("Index");
+
+
         }
     }
 }

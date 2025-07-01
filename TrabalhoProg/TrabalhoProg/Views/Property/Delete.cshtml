@@ -1,4 +1,4 @@
-﻿﻿@model Modelo.Property
+﻿@model TrabalhoProg.ViewModels.PropertyViewModel;
 
 @{
     ViewData["Title"] = "Apagar uma propriedade";
@@ -8,48 +8,18 @@
 
     <div class="row">
         <div class="col-6">Id:</div>
-        <div class="col-6">@Model.PropertyId</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Nome:</div>
-        <div class="col-6">@Model.Name</div>
+        <div class="col-6">@Model.Property!.PropertyId</div>
     </div>
 
     <div class="row">
         <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.Description</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.BedRooms</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.GarageVacancies</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.Address</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.Category</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.CurrentPricePerNight</div>
+        <div class="col-6">@Model.Property!.Description</div>
     </div>
 
     <div class="row">
         <div class="col-12">
             <form method="post" asp-action="ConfirmDelete" asp-controller="Property">
-                <input type="hidden" name="id" value="@Model.CategoryId" />
+                <input type="hidden" name="id" value="@Model.Property!.PropertyId" />
 
                 <button class="btn btn-primary">
                     Excluir

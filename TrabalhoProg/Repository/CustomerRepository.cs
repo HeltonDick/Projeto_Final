@@ -9,8 +9,9 @@ namespace TrabalhoProg.Repository
                 if (c.CustomerId == id)
                     return c;
 
-                return null!;
+                
             }
+            return null!;
         }
 
         public List<Customer> RetrieveByName(string name)
