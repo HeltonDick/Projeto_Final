@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.DataProtection.Repositories;
-using Modelo;
-using Repository;
+using TrabalhoProg.Models;
+using TrabalhoProg.r
+
 
 var builder = WebApplication.CreateBuilder(args);
 

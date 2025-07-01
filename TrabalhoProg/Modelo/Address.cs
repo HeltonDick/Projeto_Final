@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace TrabalhoProg.Modelo
 {
     public class Address() {
         public int AddressId { get; set; }

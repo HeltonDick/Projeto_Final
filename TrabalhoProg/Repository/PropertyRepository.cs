@@ -1,13 +1,16 @@
-﻿using Modelo;
+﻿using TrabalhoProg.Modelo;
 
-namespace Repository {
+namespace TrabalhoProg.Repository {
     public class PropertyRepository {
-        public Property Retrieve(int id) {
+
+        public Property Retrieve(int id) 
+        {
             foreach (Property p in CustomerData.Properties) {
                 if (p.PropertyId == id)
-                    return p;
-                return null!;
+                    return p;                
             }
+
+            return null!;
         }
 
         public List<Property> RetrieveByName(string name)

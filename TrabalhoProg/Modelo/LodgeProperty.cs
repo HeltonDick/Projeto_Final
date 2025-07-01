@@ -1,6 +1,4 @@
-﻿using Modelo;
-
-namespace Modelo
+﻿namespace TrabalhoProg.Modelo
 {
     public class LodgeProperty {
         public int LodgePropertyId { get; set; }

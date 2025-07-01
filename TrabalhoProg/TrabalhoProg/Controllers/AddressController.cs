@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+
+using TrabalhoProg.Modelo;
+
 
 namespace TrabalhoProg.Controllers
 {

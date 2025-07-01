@@ -1,6 +1,5 @@
-﻿using Modelo;
-
-namespace Modelo
+﻿
+namespace TrabalhoProg.Modelo
 {
     public class Lodge
     {
@@ -12,7 +11,8 @@ namespace Modelo
         #endregion
 
 
-        public class Lodge() {
+        public Lodge() 
+        {
             LodgeDate = DateTime.Now;
             LodgeProperty = new List<LodgeProperty>();
         }
@@ -24,7 +24,7 @@ namespace Modelo
         public class Save(Lodge lodge) {
         }
 
-        public Order Retrieve(int LodgeId) {
+        public Lodge Retrieve(int LodgeId) {
             return new Lodge();
         }
 

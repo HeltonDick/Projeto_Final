@@ -1,0 +1,8 @@
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.AssemblyInfoInputs.cache
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.AssemblyInfo.cs
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.csproj.CoreCompileInputs.cache
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.RazorAssemblyInfo.cache
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.RazorAssemblyInfo.cs
+C:\Users\427603\Desktop\Projeto_Final\TrabalhoProg\TrabalhoProg\obj\Debug\net9.0\TrabalhoProg.sourcelink.json

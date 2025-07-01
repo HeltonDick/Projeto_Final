@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrabalhoProg.Models;
-using Modelo;
-using Repository;
+using TrabalhoProg.Modelo;
+using TrabalhoProg.Repository;
 
 namespace TrabalhoProg.Controllers
 {
@@ -14,7 +13,7 @@ namespace TrabalhoProg.Controllers
 
         public CustomerController(IWebHostEnvironment environment, CustomerRepository customerRepository) {
             this.environment = environment;
-            _customerRepository = new customerRepository;
+            _customerRepository = new CustomerRepository();
         }
 
         [HttpGet]
@@ -25,17 +24,19 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create() {
-            _customerRepository.save(c)
+        public IActionResult Create() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create() 
+        {
+            _customerRepository.Save(c);
 
             List<Customer> customers = _customerRepository.RetrieveAll();
 
             return View("Index", customers);
-        }
-
-        [HttpPost]
-        public IActionResult Create() {
-            return View();
         }
 
         [HttpGet]

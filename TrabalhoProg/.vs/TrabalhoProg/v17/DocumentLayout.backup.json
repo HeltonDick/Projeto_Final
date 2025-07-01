@@ -1,10 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\prog\\TrabalhoProg\\",
+  "WorkspaceRootPath": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\prog\\TrabalhoProg\\TrabalhoProg\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TrabalhoProg\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\trabalhoprog\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\trabalhoprog\\trabalhoprog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9EC210E0-FECA-4320-BA35-D87AE85E9EBE}|TrabalhoProg\\TrabalhoProg.csproj|solutionrelative:trabalhoprog\\trabalhoprog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\lodgeproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\lodgeproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\lodge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\lodge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|c:\\users\\427603\\desktop\\projeto_final\\trabalhoprog\\modelo\\modelo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{02750FEB-F6D6-E185-2619-3DCE4D64D0AA}|Modelo\\Modelo.csproj|solutionrelative:modelo\\modelo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrabalhoProg",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\TrabalhoProg.csproj",
+              "RelativeDocumentMoniker": "TrabalhoProg\\TrabalhoProg.csproj",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\TrabalhoProg.csproj",
+              "RelativeToolTip": "TrabalhoProg\\TrabalhoProg.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-01T01:06:05.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Property.cs",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Property.cs",
+              "RelativeDocumentMoniker": "Modelo\\Property.cs",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Property.cs",
+              "RelativeToolTip": "Modelo\\Property.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:06:01.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LodgeProperty.cs",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\LodgeProperty.cs",
+              "RelativeDocumentMoniker": "Modelo\\LodgeProperty.cs",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\LodgeProperty.cs",
+              "RelativeToolTip": "Modelo\\LodgeProperty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:06:01.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Lodge.cs",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Lodge.cs",
+              "RelativeDocumentMoniker": "Modelo\\Lodge.cs",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Lodge.cs",
+              "RelativeToolTip": "Modelo\\Lodge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:06:00.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\prog\\TrabalhoProg\\TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\prog\\TrabalhoProg\\TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCMAAAB8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-30T21:42:15.708Z",
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "TrabalhoProg\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\TrabalhoProg\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "TrabalhoProg\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:05:00.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Modelo",
+              "DocumentMoniker": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Modelo.csproj",
+              "RelativeDocumentMoniker": "Modelo\\Modelo.csproj",
+              "ToolTip": "C:\\Users\\427603\\Desktop\\Projeto_Final\\TrabalhoProg\\Modelo\\Modelo.csproj",
+              "RelativeToolTip": "Modelo\\Modelo.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-01T01:04:54.158Z",
               "EditorCaption": ""
             }
           ]

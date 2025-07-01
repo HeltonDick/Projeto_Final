@@ -1,6 +1,6 @@
-﻿using Modelo;
+﻿using TrabalhoProg.Modelo;
 
-namespace Repository {
+namespace TrabalhoProg.Repository {
     public class AddressRepository {
         public Address Retrieve(int id)
         {
@@ -8,7 +8,7 @@ namespace Repository {
             {
                 if (address.AddressId == id)
                 {
-                    return endereco;
+                    return address;
                 }
             }
             return null!;

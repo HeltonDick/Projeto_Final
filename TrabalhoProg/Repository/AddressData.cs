@@ -1,6 +1,6 @@
-﻿using Modelo;
+﻿using TrabalhoProg.Modelo;
 
-namespace Repository
+namespace TrabalhoProg.Repository
 {
     public class AddressData {
         public static List<Address> Addresses { get; set; } = [];

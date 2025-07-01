@@ -1,6 +1,4 @@
-﻿using Modelo;
-
-namespace Modelo
+﻿namespace TrabalhoProg.Modelo
 {
     public class Customer
     {
@@ -10,7 +8,8 @@ namespace Modelo
         public string? Phone { get; set; }
         public Address? Address { get; set; }
 
-        public bool Validate() {
+        public bool Validate()
+        {
             bool IsValid = true;
 
             IsValid = (CustomerId > 0) &&
@@ -21,10 +20,13 @@ namespace Modelo
             return IsValid;
         }
 
-        public Customer Retrieve() {
+        public Customer Retrieve()
+        {
             return new Customer();
         }
 
-        public void Save(Customer customer) {
+        public void Save(Customer customer)
+        {
         }
     }
+}

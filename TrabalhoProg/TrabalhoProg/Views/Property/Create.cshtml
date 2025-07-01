@@ -1,1 +1,39 @@
-﻿
+﻿@model Modelo.Property
+
+@{
+    ViewData["Title"] = "Criar uma nova propriedade";
+}
+
+<div class="text-center">
+    <h1>Cadastro de Propriedade</h1>
+
+    <div class="container">
+
+        <form id="formProperty" method="post" asp-action="Create" asp-controller="Property">
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">País:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Name" />
+                    <label asp-for="@Model.Description">Estado:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Description" />
+                    <label asp-for="@Model.BedRooms">Cidade:</label>
+                    <input type="text" class="form-control" asp-for="@Model.BedRooms" />
+                    <label asp-for="@Model.GarageVacancies">Estado:</label>
+                    <input type="text" class="form-control" asp-for="@Model.GarageVacancies" />
+                    <label asp-for="@Model.Address.AddressId">Estado:</label>
+                    <input type="text" class="form-control" asp-for="@Model.AddressId" />
+                    <label asp-for="@Model.Category.CategoryId">Estado:</label>
+                    <input type="text" class="form-control" asp-for="@Model.CategoryId" />
+                </div>
+            </div>
+
+            <button id="btnProperty" type="submit" class="btn btn-primary" value="Cadastrar">
+                Cadastrar
+            </button>
+
+            <a asp-action="Index" class="btn btn-danger" asp-controller="Property">
+                Voltar
+            </a>
+        </form>
+    </div>
+</div>

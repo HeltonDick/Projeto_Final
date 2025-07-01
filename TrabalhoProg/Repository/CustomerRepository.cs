@@ -1,6 +1,6 @@
-﻿using Modelo;
+﻿using TrabalhoProg.Modelo;
 
-namespace Repository
+namespace TrabalhoProg.Repository
 {
     public class CustomerRepository
     {

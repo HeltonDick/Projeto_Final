@@ -1,5 +1,9 @@
-using Modelo;
+using TrabalhoProg.Modelo;
 
-namespace Repository {
-    public static List<Category> Categories { get; set; } = [];
+namespace TrabalhoProg.Repository {
+
+    public class CategoryData
+    {
+        public static List<Category> Categories { get; set; } = [];
+    }
 }

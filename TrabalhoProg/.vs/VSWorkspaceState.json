@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\TrabalhoProg",
+    "\\TrabalhoProg\\Controllers",
     "\\TrabalhoProg\\Views",
+    "\\TrabalhoProg\\Views\\Address",
     "\\TrabalhoProg\\Views\\Shared"
   ],
-  "SelectedNode": "\\TrabalhoProg\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

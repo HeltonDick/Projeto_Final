@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace TrabalhoProg.Modelo
 {
     public class Property
     {
@@ -13,7 +13,7 @@ namespace Modelo
         public string? Description { get; set; }
         public int BedRooms { get; set; }
         public int GarageVacancies { get; set; }
-        public Adress? Address { get; set; }
+        public Address? Address { get; set; }
         public Category? Category { get; set; }
         public double CurrentPricePerNight { get; set; }
 

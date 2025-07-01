@@ -1,0 +1,58 @@
+﻿﻿@model Modelo.Address
+
+@{
+    ViewData["Title"] = "Deletarum endereco";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">Id:</div>
+        <div class="col-6">@Model.AddressId</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">País:</div>
+        <div class="col-6">@Model.Country</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Estado:</div>
+        <div class="col-6">@Model.State</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Cidade:</div>
+        <div class="col-6">@Model.City</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Rua:</div>
+        <div class="col-6">@Model.Street</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Rua1:</div>
+        <div class="col-6">@Model.Street1</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Código Postal:</div>
+        <div class="col-6">@Model.PostalCode</div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="post" asp-action="ConfirmDelete" asp-controller="Address">
+                <input type="hidden" name="id" value="@Model.AddressId" />
+
+                <button class="btn btn-primary">
+                    Excluir
+                </button>
+
+                <a asp-action="Index" class="btn btn-danger" asp-controller="Address">
+                    Voltar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
