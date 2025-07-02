@@ -44,11 +44,30 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
-            _propertyRepository.DeleteById(id);
-            var realState = _propertyRepository.RetrieveAll();
-            return View("Index", realState);
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            Property property =
+                _propertyRepository.Retrieve(id.Value);
+
+            if (property == null)
+                return NotFound();
+
+            return View(property);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmDelete(int? id)
+        {
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            if (!_propertyRepository.DeleteById(id.Value))
+                return NotFound();
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -81,6 +100,31 @@ namespace TrabalhoProg.Controllers
             SaveFile(fileContent, "DelimitatedFile.txt");
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult ExportFixedFile()
+        {
+            string fileContent = string.Empty;
+            foreach (Property c in PropertyData.RealStates)
+            {
+                fileContent +=
+                    String.Format("{0:5}{1:64}", c.PropertyId, c.Name, c.Description, c.BedRooms) +
+                    String.Format("{0:5}", c.GarageVacancies) +
+                    String.Format("{0:32}", c.CurrentPricePerNight) +
+                    String.Format("{0:2}", c.Category?.Name) +
+                    String.Format("{0:32}", c.Category?.Description) +
+                    String.Format("{0:64}", c.Address?.Street) +
+                    String.Format("{0:64}", c.Address?.Street1) +
+                    String.Format("{0:64}", c.Address?.City) +
+                    String.Format("{0:64}", c.Address?.State) +
+                    String.Format("{0:64}", c.Address?.PostalCode) +
+                    String.Format("{0:64}", c.Address?.Country) +
+                    "\n";
+            }
+
+            SaveFile(fileContent, "FixedFile.txt");
+            return RedirectToAction("Index");
         }
 
         private bool SaveFile(string content, string fileName)

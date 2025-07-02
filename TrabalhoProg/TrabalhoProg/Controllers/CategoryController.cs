@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TrabalhoProg.Repository;
 using TrabalhoProg.Modelo;
 
@@ -40,11 +39,30 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
-            _categoryRepository.DeleteById(id);
-            var realState = _categoryRepository.RetrieveAll();
-            return View("Index", realState);
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            Category category=
+                _categoryRepository.Retrieve(id.Value);
+
+            if (category == null)
+                return NotFound();
+
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmDelete(int? id)
+        {
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            if (!_categoryRepository.DeleteById(id.Value))
+                return NotFound();
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -61,6 +79,81 @@ namespace TrabalhoProg.Controllers
             _categoryRepository.Update(category);
             var categories = _categoryRepository.RetrieveAll();
             return View("Index", categories);
+        }
+
+        [HttpGet]
+        public IActionResult ExportDelimitatedFile()
+        {
+            string fileContent = string.Empty;
+            foreach (Category c in CategoryData.Categories)
+            {
+                fileContent +=
+                    $"{c.CategoryId};{c.Name};{c.Description}\n";
+            }
+
+            SaveFile(fileContent, "DelimitatedFile.txt");
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ExportFixedFile()
+        {
+            string fileContent = string.Empty;
+            foreach (Category c in CategoryData.Categories)
+            {
+                fileContent +=
+                    String.Format("{0:5}{1:64}", c.CategoryId, c.Name) +
+                    String.Format("{0:5}", c.Description) +
+                    "\n";
+
+            }
+
+            SaveFile(fileContent, "FixedFile.txt");
+
+            return RedirectToAction("Index");
+        }
+
+        private bool SaveFile(string content, string fileName)
+        {
+            bool ret = true;
+
+            if (string.IsNullOrEmpty(content) || string.IsNullOrEmpty(fileName))
+                return false;
+
+            var path = Path.Combine(
+                environment.WebRootPath,
+                "TextFiles"
+            );
+
+            try
+            {
+
+                if (!System.IO.Directory.Exists(path))
+                    System.IO.Directory.CreateDirectory(path);
+
+                var filepath = Path.Combine(
+                    path,
+                    fileName
+                );
+
+                using (StreamWriter sw = System.IO.File.CreateText(filepath))
+                {
+                    sw.Write(content);
+                }
+            }
+            catch (IOException ioEx)
+            {
+                string msg = ioEx.Message;
+                ret = false;
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                ret = false;
+            }
+
+            return ret;
         }
     }
 }

@@ -13,7 +13,6 @@ namespace TrabalhoProg.ViewModels
     public class SelectedLodge
     {
         public bool IsSelected { get; set; } = false;
-        public LodgeProperty LodgeProperty { get; set; } = null!;
     }
 }
     

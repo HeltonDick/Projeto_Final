@@ -9,7 +9,6 @@ namespace TrabalhoProg.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private Lodge _lodge;
 
         public HomeController(ILogger<HomeController> logger)
         {

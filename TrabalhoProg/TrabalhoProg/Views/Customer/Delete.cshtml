@@ -1,0 +1,43 @@
+﻿@model TrabalhoProg.Modelo.Customer;
+@{
+    ViewData["Title"] = "Deletar uma categoria";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-6">Id:</div>
+        <div class="col-6">@Model.CustomerId</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Nome:</div>
+        <div class="col-6">@Model.Name</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Email:</div>
+        <div class="col-6">@Model.Email</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">Telefone:</div>
+        <div class="col-6">@Model.Phone</div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="post" asp-action="ConfirmDelete" asp-controller="Customer">
+                <input type="hidden" name="id" value="@Model.CustomerId" />
+
+                <button class="btn btn-primary">
+                    Excluir
+                </button>
+
+                <a asp-action="Index" class="btn btn-danger" asp-controller="Customer">
+                    Voltar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

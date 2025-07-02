@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <h1>Cadastro de Endereco</h1>
+    <h1>Cadastro de Customer</h1>
 
     <div class="container">
 
@@ -14,12 +14,10 @@
                 <div class="form-group">
                     <label asp-for="@Model.Name">Nome:</label>
                     <input type="text" class="form-control" asp-for="@Model.Name" />
-                    <label asp-for="@Model.Email">Estado:</label>
+                    <label asp-for="@Model.Email">Email:</label>
                     <input type="text" class="form-control" asp-for="@Model.Email" />
-                    <label asp-for="@Model.Phone">Cidade:</label>
+                    <label asp-for="@Model.Phone">Telefone:</label>
                     <input type="text" class="form-control" asp-for="@Model.Phone" />
-                    <label asp-for="@Model.Address">Estado:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Address"/>
                     
                     <hr />
 
@@ -48,7 +46,7 @@
                 Cadastrar
             </button>
 
-            <a asp-action="Index" class="btn btn-danger" asp-controller="Address">
+            <a asp-action="Index" class="btn btn-danger" asp-controller="Customer">
                 Voltar
             </a>
         </form>

@@ -43,16 +43,8 @@ static void FillCustomerData() {
         {
             CustomerId = i,
             Name = $"Customer {i}",
-            Address = new Address()
-            {
-                AddressId = i,
-                Street = $"Rua de ca",
-                Street1 = $"Rua de la",
-                City = $"Essa cidade aqui",
-                State = $"O estado liquido",
-                PostalCode = $"89560-000",
-                Country = $"Brazil"
-            }
+            Email = $"Customer {i}",
+            Phone = $"{i}"
         };
 
         CustomerData.Customers.Add(customer);
@@ -66,7 +58,8 @@ static void FillCategoryData()
         Category category = new()
         {
             CategoryId = i,
-            Name = $"Category {i}"
+            Name = $"Category {i}",
+            Description = $"Cate {i}"
         };
         CategoryData.Categories.Add(category);
     }
