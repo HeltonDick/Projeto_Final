@@ -12,38 +12,48 @@
         <form id="formProperty" method="post" asp-action="Create" asp-controller="Property">
             <div class="row">
                 <div class="form-group">
-                    <label asp-for="Property.Name">Nome:</label>
-                    <input type="text" class="form-control" asp-for="Property.Name" />
+                    <label asp-for="@Model.Property!.Name">Nome:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Name" />
 
                     <label asp-for="Property.Description">Descrição:</label>
-                    <input type="text" class="form-control" asp-for="Property.Description" />
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Description" />
 
                     <label asp-for="Property.BedRooms">Quartos:</label>
-                    <input type="text" class="form-control" asp-for="Property.BedRooms" />
+                    <input type="text" class="form-control" asp-for="@Model.Property!.BedRooms" />
 
                     <label asp-for="Property.GarageVacancies">Vagas de Garagem:</label>
-                    <input type="text" class="form-control" asp-for="Property.GarageVacancies" />
+                    <input type="text" class="form-control" asp-for="@Model.Property!.GarageVacancies" />
+
+                    <label asp-for="Property.Category">Categoria:</label>
+                    <select class="form-control" asp-for="Property.Category.Name">
+                        <option value="">Selecione uma categoria</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Name">@category.Name</option>
+                        }
+                    </select>
+
 
                     <hr />
 
                     <h4>Endereço</h4>
-                    <label asp-for="Property.Address.Street">Rua:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.Street" />
+                    <label asp-for="@Model.Property!.Address!.Street">Rua:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.Street" />
 
-                    <label asp-for="Property.Address.Street1">Número/Complemento:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.Street1" />
+                    <label asp-for="@Model.Property!.Address!.Street1">Rua1:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.Street1" />
 
-                    <label asp-for="Property.Address.City">Cidade:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.City" />
+                    <label asp-for="@Model.Property!.Address!.City">Cidade:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.City" />
 
-                    <label asp-for="Property.Address.State">Estado:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.State" />
+                    <label asp-for="@Model.Property!.Address!.State">Estado:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.State" />
 
-                    <label asp-for="Property.Address.PostalCode">CEP:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.PostalCode" />
+                    <label asp-for="@Model.Property!.Address!.PostalCode">CEP:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.PostalCode" />
 
-                    <label asp-for="Property.Address.Country">País:</label>
-                    <input type="text" class="form-control" asp-for="Property.Address.Country" />
+                    <label asp-for="@Model.Property!.Address!.Country">País:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Property!.Address!.Country" />
                 </div>
             </div>
 

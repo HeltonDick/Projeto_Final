@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TrabalhoProg.Modelo;
 using TrabalhoProg.Repository;
 
@@ -8,91 +7,55 @@ namespace TrabalhoProg.Controllers
     public class CustomerController : Controller
     {
         private readonly IWebHostEnvironment environment;
+        private readonly CustomerRepository _customerRepository;
 
-        private CustomerRepository _customerRepository;
-
-        public CustomerController(
-            IWebHostEnvironment environment
-        )
+        public CustomerController(IWebHostEnvironment environment)
         {
-            _customerRepository = new CustomerRepository();
             this.environment = environment;
+            _customerRepository = new CustomerRepository();
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            List<Customer> customers =
-                _customerRepository.RetrieveAll();
-
+            var customers = _customerRepository.RetrieveAll();
             return View(customers);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new Customer());
         }
 
         [HttpPost]
         public IActionResult Create(Customer c)
         {
             _customerRepository.Save(c);
-
-            List<Customer> customers =
-                _customerRepository.RetrieveAll();
-
-            return View("Index", customers);
-        }
-
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult ExportDelimitedFile()
-        {
-            string fileContent = string.Empty;
-            foreach (Customer c in CustomerData.Customers)
-            {
-                fileContent +=
-                    $"{c.CustomerId};{c.Name};{c.Email};{c.Phone};" +
-                    $"{c.Address!.AddressId};{c.Address!.Street};" +
-                    $"{c.Address!.Street1};{c.Address!.City};" +
-                    $"{c.Address!.State};{c.Address!.PostalCode};" +
-                    $"{c.Address!.Country}\n";
-            }
-            SaveFile(fileContent, "DelimitedFile.txt");
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult ExportFixedFile()
+        [HttpGet]
+        public IActionResult Update(int id)
         {
-            string fileContent = string.Empty;
-            foreach (Customer c in CustomerData.Customers)
-            {
-                fileContent +=
-                    String.Format("{0:5}{1:64}", c.CustomerId, c.Name, c.Email, c.Phone) +
-                    String.Format("{0:5}", c.Address!.AddressId) +
-                    String.Format("{0:32}", c.Address!.Street) +
-                    String.Format("{0:2}", c.Address!.Street1) +
-                    String.Format("{0:32}", c.Address!.City) +
-                    String.Format("{0:64}", c.Address!.State) +
-                    String.Format("{0:64}", c.Address!.PostalCode) +
-                    String.Format("{0:64}", c.Address!.Country) +
-                    "\n";
-            }
+            var customer = _customerRepository.Retrieve(id);
+            return View(customer);
+        }
 
-            SaveFile(fileContent, "FixedFile.txt");
+        [HttpPost]
+        public IActionResult Update(Customer customer)
+        {
+            _customerRepository.Update(customer);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult Delete(int? id)
         {
-            if (id is null || id.Value <= 0)
+            if (id == null || id <= 0)
                 return NotFound();
 
-            Customer customer =
-                _customerRepository.Retrieve(id.Value);
-
+            var customer = _customerRepository.Retrieve(id.Value);
             if (customer == null)
                 return NotFound();
 
@@ -102,7 +65,7 @@ namespace TrabalhoProg.Controllers
         [HttpPost]
         public IActionResult ConfirmDelete(int? id)
         {
-            if (id is null || id.Value <= 0)
+            if (id == null || id <= 0)
                 return NotFound();
 
             if (!_customerRepository.DeleteById(id.Value))
@@ -111,46 +74,56 @@ namespace TrabalhoProg.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult ExportDelimitedFile()
+        {
+            var fileContent = string.Join("\n",
+                CustomerData.Customers.Select(c =>
+                    $"{c.CustomerId};{c.Name};{c.Email};{c.Phone};" +
+                    $"{c.Address?.AddressId};{c.Address?.Street};{c.Address?.Street1};" +
+                    $"{c.Address?.City};{c.Address?.State};{c.Address?.PostalCode};{c.Address?.Country}"
+                )
+            );
+
+            SaveFile(fileContent, "DelimitedFile.txt");
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ExportFixedFile()
+        {
+            var fileContent = string.Join("\n",
+                CustomerData.Customers.Select(c =>
+                    $"{c.CustomerId,5}{c.Name,-20}{c.Email,-30}{c.Phone,-15}" +
+                    $"{c.Address?.AddressId,5}{c.Address?.Street,-32}{c.Address?.Street1,-32}" +
+                    $"{c.Address?.City,-32}{c.Address?.State,-32}{c.Address?.PostalCode,-10}{c.Address?.Country,-20}"
+                )
+            );
+
+            SaveFile(fileContent, "FixedFile.txt");
+            return RedirectToAction("Index");
+        }
+
         private bool SaveFile(string content, string fileName)
         {
-            bool ret = true;
-
             if (string.IsNullOrEmpty(content) || string.IsNullOrEmpty(fileName))
                 return false;
 
-            var path = Path.Combine(
-                environment.WebRootPath,
-                "TextFiles"
-            );
+            var path = Path.Combine(environment.WebRootPath, "TextFiles");
 
             try
             {
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
 
-                if (!System.IO.Directory.Exists(path))
-                    System.IO.Directory.CreateDirectory(path);
-
-                var filepath = Path.Combine(
-                    path,
-                    fileName
-                );
-
-                using (StreamWriter sw = System.IO.File.CreateText(filepath))
-                {
-                    sw.Write(content);
-                }
+                var filepath = Path.Combine(path, fileName);
+                System.IO.File.WriteAllText(filepath, content);
+                return true;
             }
-            catch (IOException ioEx)
+            catch
             {
-                string msg = ioEx.Message;
-                ret = false;
+                return false;
             }
-            catch (Exception ex)
-            {
-                string msg = ex.Message;
-                ret = false;
-            }
-
-            return ret;
         }
     }
 }

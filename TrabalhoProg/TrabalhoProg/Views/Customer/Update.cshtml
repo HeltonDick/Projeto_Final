@@ -1,1 +1,49 @@
-﻿
+﻿@model TrabalhoProg.Modelo.Customer
+
+@{
+    ViewData["Title"] = "Atualizar Customer";
+}
+
+<div class="text-center">
+    <h1>Atualizar Customer</h1>
+    <div class="container">
+        <form method="post" asp-action="Update" asp-controller="Customer">
+            <input type="hidden" asp-for="CustomerId" />
+
+            <div class="form-group">
+                <label asp-for="Name">Nome:</label>
+                <input type="text" class="form-control" asp-for="Name" />
+
+                <label asp-for="Email">Email:</label>
+                <input type="text" class="form-control" asp-for="Email" />
+
+                <label asp-for="Phone">Telefone:</label>
+                <input type="text" class="form-control" asp-for="Phone" />
+
+                <hr />
+                <h4>Endereço</h4>
+
+                <label asp-for="Address.Street">Rua:</label>
+                <input type="text" class="form-control" asp-for="Address.Street" />
+
+                <label asp-for="Address.Street1">Rua1:</label>
+                <input type="text" class="form-control" asp-for="Address.Street1" />
+
+                <label asp-for="Address.City">Cidade:</label>
+                <input type="text" class="form-control" asp-for="Address.City" />
+
+                <label asp-for="Address.State">Estado:</label>
+                <input type="text" class="form-control" asp-for="Address.State" />
+
+                <label asp-for="Address.PostalCode">CEP:</label>
+                <input type="text" class="form-control" asp-for="Address.PostalCode" />
+
+                <label asp-for="Address.Country">País:</label>
+                <input type="text" class="form-control" asp-for="Address.Country" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            <a asp-action="Index" class="btn btn-danger">Voltar</a>
+        </form>
+    </div>
+</div>

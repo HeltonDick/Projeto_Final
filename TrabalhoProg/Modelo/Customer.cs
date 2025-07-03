@@ -10,23 +10,10 @@
 
         public bool Validate()
         {
-            bool IsValid = true;
-
-            IsValid = (CustomerId > 0) &&
-            (!string.IsNullOrEmpty(this.Name)) &&
-            (!string.IsNullOrEmpty(this.Email)) &&
-            (!string.IsNullOrEmpty(this.Phone));
-
-            return IsValid;
-        }
-
-        public Customer Retrieve()
-        {
-            return new Customer();
-        }
-
-        public void Save(Customer customer)
-        {
+            return (CustomerId > 0) &&
+                   (!string.IsNullOrEmpty(Name)) &&
+                   (!string.IsNullOrEmpty(Email)) &&
+                   (!string.IsNullOrEmpty(Phone));
         }
     }
 }

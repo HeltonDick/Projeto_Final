@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TrabalhoProg.ViewModels;
 using TrabalhoProg.Repository;
 using TrabalhoProg.Modelo;
@@ -14,7 +13,6 @@ namespace TrabalhoProg.Controllers
         private readonly CategoryRepository _categoryRepository;
         private readonly AddressRepository _addressRepository;
 
-
         public PropertyController(IWebHostEnvironment environment)
         {
             this.environment = environment;
@@ -27,21 +25,35 @@ namespace TrabalhoProg.Controllers
         public IActionResult Index()
         {
             List<Property> realState = _propertyRepository.RetrieveAll();
-
             return View(realState);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            var viewModel = new PropertyViewModel()
+            var viewModel = new PropertyViewModel
             {
-                Categories = _categoryRepository.RetrieveAll(),
                 Property = new Property(),
+                Categories = _categoryRepository.RetrieveAll(),
                 Addresses = _addressRepository.RetrieveAll()
             };
             return View(viewModel);
         }
+
+        [HttpPost]
+        public IActionResult Create(Property property)
+        {
+            var selectedCategory = _categoryRepository.RetrieveAll()
+                .FirstOrDefault(c => c.Name == property.Category?.Name);
+
+            property.Category = selectedCategory;
+
+            _propertyRepository.Save(property);
+
+            List<Property> properties = _propertyRepository.RetrieveAll();
+            return View("Index", properties);
+        }
+
 
         [HttpGet]
         public IActionResult Delete(int? id)
@@ -49,13 +61,17 @@ namespace TrabalhoProg.Controllers
             if (id is null || id.Value <= 0)
                 return NotFound();
 
-            Property property =
-                _propertyRepository.Retrieve(id.Value);
+            Property property = _propertyRepository.Retrieve(id.Value);
 
             if (property == null)
                 return NotFound();
 
-            return View(property);
+            var viewModel = new PropertyViewModel
+            {
+                Property = property
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -84,11 +100,12 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpGet]
-        public IActionResult ExportDelimitatedFile()
+        public IActionResult ExportDelimitedFile()
         {
             string fileContent = string.Empty;
 
-            foreach (Property c in PropertyData.RealStates) {
+            foreach (Property c in PropertyData.RealStates)
+            {
                 fileContent +=
                     $"{c.PropertyId};{c.Name};{c.Description};{c.BedRooms};" +
                     $"{c.GarageVacancies};{c.CurrentPricePerNight};{c.Category?.Name};" +
@@ -97,29 +114,30 @@ namespace TrabalhoProg.Controllers
                     $"{c.Address?.State};{c.Address?.PostalCode};{c.Address?.Country}\n";
             }
 
-            SaveFile(fileContent, "DelimitatedFile.txt");
+            SaveFile(fileContent, "DelimitedFile.txt");
 
-            return View();
+            return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult ExportFixedFile()
         {
             string fileContent = string.Empty;
+
             foreach (Property c in PropertyData.RealStates)
             {
                 fileContent +=
-                    String.Format("{0:5}{1:64}", c.PropertyId, c.Name, c.Description, c.BedRooms) +
-                    String.Format("{0:5}", c.GarageVacancies) +
-                    String.Format("{0:32}", c.CurrentPricePerNight) +
-                    String.Format("{0:2}", c.Category?.Name) +
-                    String.Format("{0:32}", c.Category?.Description) +
-                    String.Format("{0:64}", c.Address?.Street) +
-                    String.Format("{0:64}", c.Address?.Street1) +
-                    String.Format("{0:64}", c.Address?.City) +
-                    String.Format("{0:64}", c.Address?.State) +
-                    String.Format("{0:64}", c.Address?.PostalCode) +
-                    String.Format("{0:64}", c.Address?.Country) +
+                    string.Format("{0,5}{1,-64}{2,-64}{3,5}", c.PropertyId, c.Name, c.Description, c.BedRooms) +
+                    string.Format("{0,5}", c.GarageVacancies) +
+                    string.Format("{0,32}", c.CurrentPricePerNight) +
+                    string.Format("{0,-32}", c.Category?.Name) +
+                    string.Format("{0,-32}", c.Category?.Description) +
+                    string.Format("{0,-64}", c.Address?.Street) +
+                    string.Format("{0,-64}", c.Address?.Street1) +
+                    string.Format("{0,-64}", c.Address?.City) +
+                    string.Format("{0,-64}", c.Address?.State) +
+                    string.Format("{0,-64}", c.Address?.PostalCode) +
+                    string.Format("{0,-64}", c.Address?.Country) +
                     "\n";
             }
 
@@ -129,44 +147,25 @@ namespace TrabalhoProg.Controllers
 
         private bool SaveFile(string content, string fileName)
         {
-            bool ret = true;
-
             if (string.IsNullOrEmpty(content) || string.IsNullOrEmpty(fileName))
                 return false;
 
-            var path = Path.Combine(
-                environment.WebRootPath,
-                "TextFiles"
-            );
+            var path = Path.Combine(environment.WebRootPath, "TextFiles");
 
             try
             {
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
 
-                if (!System.IO.Directory.Exists(path))
-                    System.IO.Directory.CreateDirectory(path);
+                var filepath = Path.Combine(path, fileName);
 
-                var filepath = Path.Combine(
-                    path,
-                    fileName
-                );
-
-                using (StreamWriter sw = System.IO.File.CreateText(filepath))
-                {
-                    sw.Write(content);
-                }
+                System.IO.File.WriteAllText(filepath, content);
+                return true;
             }
-            catch (IOException ioEx)
+            catch
             {
-                string msg = ioEx.Message;
-                ret = false;
+                return false;
             }
-            catch (Exception ex)
-            {
-                string msg = ex.Message;
-                ret = false;
-            }
-
-            return ret;
         }
     }
 }

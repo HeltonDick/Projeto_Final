@@ -1,18 +1,14 @@
 ﻿using TrabalhoProg.Modelo;
 
-namespace TrabalhoProg.Repository {
-    public class AddressRepository {
-        public Address Retrieve(int id)
+namespace TrabalhoProg.Repository
+{
+    public class AddressRepository
+    {
+        public Address? Retrieve(int id)
         {
-            foreach (Address address in AddressData.Addresses)
-            {
-                if (address.AddressId == id)
-                {
-                    return address;
-                }
-            }
-            return null!;
+            return AddressData.Addresses.FirstOrDefault(address => address.AddressId == id);
         }
+
         public List<Address> RetrieveAll()
         {
             return AddressData.Addresses;
@@ -23,6 +19,7 @@ namespace TrabalhoProg.Repository {
             address.AddressId = AddressData.Addresses.Count + 1;
             AddressData.Addresses.Add(address);
         }
+
         public bool Delete(Address address)
         {
             return AddressData.Addresses.Remove(address);
@@ -30,24 +27,26 @@ namespace TrabalhoProg.Repository {
 
         public bool DeleteById(int id)
         {
-            foreach (Address address in AddressData.Addresses)
+            var address = Retrieve(id);
+            if (address != null)
             {
-                if (address.AddressId == id)
-                {
-                    return AddressData.Addresses.Remove(address);
-                }
+                return AddressData.Addresses.Remove(address);
             }
             return false;
         }
+
         public void Update(Address newAddress)
         {
-            Address oldAddress = Retrieve(newAddress.AddressId);
-            oldAddress.Street = newAddress.Street;
-            oldAddress.Street1 = newAddress.Street1;
-            oldAddress.City = newAddress.City;
-            oldAddress.State = newAddress.State;
-            oldAddress.PostalCode = newAddress.PostalCode;
-            oldAddress.Country = newAddress.Country;
+            var oldAddress = Retrieve(newAddress.AddressId);
+            if (oldAddress != null)
+            {
+                oldAddress.Street = newAddress.Street;
+                oldAddress.Street1 = newAddress.Street1;
+                oldAddress.City = newAddress.City;
+                oldAddress.State = newAddress.State;
+                oldAddress.PostalCode = newAddress.PostalCode;
+                oldAddress.Country = newAddress.Country;
+            }
         }
     }
 }

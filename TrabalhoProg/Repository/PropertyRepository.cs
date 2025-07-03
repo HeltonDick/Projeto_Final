@@ -1,13 +1,15 @@
 ﻿using TrabalhoProg.Modelo;
 
-namespace TrabalhoProg.Repository {
-    public class PropertyRepository {
-
-        public Property Retrieve(int id) 
+namespace TrabalhoProg.Repository
+{
+    public class PropertyRepository
+    {
+        public Property Retrieve(int id)
         {
-            foreach (Property p in CustomerData.Properties) {
+            foreach (Property p in PropertyData.RealStates)
+            {
                 if (p.PropertyId == id)
-                    return p;                
+                    return p;
             }
 
             return null!;
@@ -17,8 +19,8 @@ namespace TrabalhoProg.Repository {
         {
             List<Property> ret = new List<Property>();
 
-            foreach (Property p in CustomerData.Properties)
-                if (p.Name!.ToLower().Contains(name.ToLower()))
+            foreach (Property p in PropertyData.RealStates)
+                if (p.Name != null && p.Name.ToLower().Contains(name.ToLower()))
                     ret.Add(p);
 
             return ret;
@@ -26,18 +28,18 @@ namespace TrabalhoProg.Repository {
 
         public List<Property> RetrieveAll()
         {
-            return CustomerData.Properties;
+            return PropertyData.RealStates;
         }
 
         public void Save(Property property)
         {
             property.PropertyId = GetCount() + 1;
-            CustomerData.Properties.Add(property);
+            PropertyData.RealStates.Add(property);
         }
 
         public bool Delete(Property property)
         {
-            return CustomerData.Properties.Remove(property);
+            return PropertyData.RealStates.Remove(property);
         }
 
         public bool DeleteById(int id)
@@ -53,18 +55,21 @@ namespace TrabalhoProg.Repository {
         public void Update(Property newProperty)
         {
             Property oldProperty = Retrieve(newProperty.PropertyId);
-            oldProperty.Name = newProperty.Name;
-            oldProperty.Description = newProperty.Description;
-            oldProperty.BedRooms = newProperty.BedRooms;
-            oldProperty.GarageVacancies = newProperty.GarageVacancies;
-            oldProperty.Address = newProperty.Address;
-            oldProperty.Category = newProperty.Category;
-            oldProperty.CurrentPricePerNight = newProperty.CurrentPricePerNight;
+            if (oldProperty != null)
+            {
+                oldProperty.Name = newProperty.Name;
+                oldProperty.Description = newProperty.Description;
+                oldProperty.BedRooms = newProperty.BedRooms;
+                oldProperty.GarageVacancies = newProperty.GarageVacancies;
+                oldProperty.Address = newProperty.Address;
+                oldProperty.Category = newProperty.Category;
+                oldProperty.CurrentPricePerNight = newProperty.CurrentPricePerNight;
+            }
         }
 
         public int GetCount()
         {
-            return CustomerData.Properties.Count;
+            return PropertyData.RealStates.Count;
         }
     }
 }

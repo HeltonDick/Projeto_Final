@@ -4,25 +4,16 @@ namespace TrabalhoProg.Repository
 {
     public class CustomerRepository
     {
-        public Customer Retrieve(int id) {
-            foreach (Customer c in CustomerData.Customers) {
-                if (c.CustomerId == id)
-                    return c;
-
-                
-            }
-            return null!;
+        public Customer? Retrieve(int id)
+        {
+            return CustomerData.Customers.FirstOrDefault(c => c.CustomerId == id);
         }
 
         public List<Customer> RetrieveByName(string name)
         {
-            List<Customer> ret = new List<Customer>();
-
-            foreach (Customer c in CustomerData.Customers)
-                if (c.Name!.ToLower().Contains(name.ToLower()))
-                    ret.Add(c);
-
-            return ret;
+            return CustomerData.Customers
+                .Where(c => !string.IsNullOrEmpty(c.Name) && c.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
         }
 
         public List<Customer> RetrieveAll()
@@ -43,21 +34,20 @@ namespace TrabalhoProg.Repository
 
         public bool DeleteById(int id)
         {
-            Customer customer = Retrieve(id);
-
-            if (customer != null)
-                return Delete(customer);
-
-            return false;
+            var customer = Retrieve(id);
+            return customer != null && Delete(customer);
         }
 
         public void Update(Customer newCustomer)
         {
-            Customer oldCustomer = Retrieve(newCustomer.CustomerId);
-            oldCustomer.Name = newCustomer.Name;
-            oldCustomer.Email = newCustomer.Email;
-            oldCustomer.Phone = newCustomer.Phone;
-            oldCustomer.Address = newCustomer.Address;
+            var oldCustomer = Retrieve(newCustomer.CustomerId);
+            if (oldCustomer != null)
+            {
+                oldCustomer.Name = newCustomer.Name;
+                oldCustomer.Email = newCustomer.Email;
+                oldCustomer.Phone = newCustomer.Phone;
+                oldCustomer.Address = newCustomer.Address;
+            }
         }
 
         public int GetCount()

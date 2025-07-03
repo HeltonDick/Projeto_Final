@@ -1,54 +1,46 @@
-﻿@model TrabalhoProg.Modelo.Customer;
+﻿@model TrabalhoProg.Modelo.Customer
 
 @{
-    ViewData["Title"] = "Criar um novo endereco";
+    ViewData["Title"] = "Criar um novo Customer";
 }
 
 <div class="text-center">
     <h1>Cadastro de Customer</h1>
-
     <div class="container">
+        <form method="post" asp-action="Create" asp-controller="Customer">
+            <div class="form-group">
+                <label asp-for="Name">Nome:</label>
+                <input type="text" class="form-control" asp-for="Name" />
 
-        <form id="formAddress" method="post" asp-action="Create" asp-controller="Address">
-            <div class="row">
-                <div class="form-group">
-                    <label asp-for="@Model.Name">Nome:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Name" />
-                    <label asp-for="@Model.Email">Email:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Email" />
-                    <label asp-for="@Model.Phone">Telefone:</label>
-                    <input type="text" class="form-control" asp-for="@Model.Phone" />
-                    
-                    <hr />
+                <label asp-for="Email">Email:</label>
+                <input type="text" class="form-control" asp-for="Email" />
 
-                    <h4>Endereço</h4>
-                    <label asp-for="Address.Street">Rua:</label>
-                    <input type="text" class="form-control" asp-for="Address.Street" />
+                <label asp-for="Phone">Telefone:</label>
+                <input type="text" class="form-control" asp-for="Phone" />
 
-                    <label asp-for="Address.Street1">Número/Complemento:</label>
-                    <input type="text" class="form-control" asp-for="Address.Street1" />
+                <hr />
+                <h4>Endereço</h4>
+                <label asp-for="Address.Street">Rua:</label>
+                <input type="text" class="form-control" asp-for="Address.Street" />
 
-                    <label asp-for="Address.City">Cidade:</label>
-                    <input type="text" class="form-control" asp-for="Address.City" />
+                <label asp-for="Address.Street1">Rua1:</label>
+                <input type="text" class="form-control" asp-for="Address.Street1" />
 
-                    <label asp-for="Address.State">Estado:</label>
-                    <input type="text" class="form-control" asp-for="Address.State" />
+                <label asp-for="Address.City">Cidade:</label>
+                <input type="text" class="form-control" asp-for="Address.City" />
 
-                    <label asp-for="Address.PostalCode">CEP:</label>
-                    <input type="text" class="form-control" asp-for="Address.PostalCode" />
+                <label asp-for="Address.State">Estado:</label>
+                <input type="text" class="form-control" asp-for="Address.State" />
 
-                    <label asp-for="Address.Country">País:</label>
-                    <input type="text" class="form-control" asp-for="Address.Country" />
-                </div>
+                <label asp-for="Address.PostalCode">CEP:</label>
+                <input type="text" class="form-control" asp-for="Address.PostalCode" />
+
+                <label asp-for="Address.Country">País:</label>
+                <input type="text" class="form-control" asp-for="Address.Country" />
             </div>
 
-            <button id="btnAddress" type="submit" class="btn btn-primary" value="Cadastrar">
-                Cadastrar
-            </button>
-
-            <a asp-action="Index" class="btn btn-danger" asp-controller="Customer">
-                Voltar
-            </a>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a asp-action="Index" class="btn btn-danger">Voltar</a>
         </form>
     </div>
 </div>

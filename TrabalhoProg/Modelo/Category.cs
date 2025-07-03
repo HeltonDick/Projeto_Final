@@ -1,12 +1,14 @@
 ﻿namespace TrabalhoProg.Modelo
 {
-    public class Category {
+    public class Category
+    {
         public int CategoryId { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public bool Validate() {
+        public bool Validate()
+        {
             bool IsValid = true;
 
             IsValid = (CategoryId > 0) &&
@@ -15,13 +17,5 @@
 
             return IsValid;
         }
-
-        /*
-        public Category Retrieve() {
-            return new Category();
-        }
-
-        public void Save(Category category) {  
-        }*/
     }
 }

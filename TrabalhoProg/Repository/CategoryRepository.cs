@@ -1,30 +1,19 @@
 ﻿using TrabalhoProg.Modelo;
 
-namespace TrabalhoProg.Repository {
-
+namespace TrabalhoProg.Repository
+{
     public class CategoryRepository
     {
-        public Category Retrieve(int id)
+        public Category? Retrieve(int id)
         {
-            foreach (Category c in CategoryData.Categories)
-            {
-                if (c.CategoryId == id)
-                    return c;
-
-                
-            }
-            return null!;
+            return CategoryData.Categories.FirstOrDefault(c => c.CategoryId == id);
         }
 
         public List<Category> RetrieveByName(string name)
         {
-            List<Category> ret = new List<Category>();
-
-            foreach (Category c in CategoryData.Categories)
-                if (c.Name!.ToLower().Contains(name.ToLower()))
-                    ret.Add(c);
-
-            return ret;
+            return CategoryData.Categories
+                .Where(c => c.Name != null && c.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
         }
 
         public List<Category> RetrieveAll()
@@ -45,19 +34,20 @@ namespace TrabalhoProg.Repository {
 
         public bool DeleteById(int id)
         {
-            Category category = Retrieve(id);
-
+            var category = Retrieve(id);
             if (category != null)
                 return Delete(category);
-
             return false;
         }
 
         public void Update(Category newCategory)
         {
-            Category oldCategory = Retrieve(newCategory.CategoryId);
-            oldCategory.Name = newCategory.Name;
-            oldCategory.Description = newCategory.Description;
+            var oldCategory = Retrieve(newCategory.CategoryId);
+            if (oldCategory != null)
+            {
+                oldCategory.Name = newCategory.Name;
+                oldCategory.Description = newCategory.Description;
+            }
         }
 
         public int GetCount()
@@ -65,5 +55,4 @@ namespace TrabalhoProg.Repository {
             return CategoryData.Categories.Count;
         }
     }
-    
 }

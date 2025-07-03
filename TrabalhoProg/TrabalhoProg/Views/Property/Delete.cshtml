@@ -6,15 +6,36 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-6">Id:</div>
-        <div class="col-6">@Model.Property!.PropertyId</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.Property!.Description</div>
-    </div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Quartos</th>
+                <th scope="col">Vagas Garagem</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Rua1</th>
+                <th scope="col">Rua2</th>
+                <th scope="col">Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Property!.PropertyId</td>
+                <td>@Model.Property!.Name</td>
+                <td>@Model.Property!.Description</td>
+                <td>@Model.Property!.BedRooms</td>
+                <td>@Model.Property!.GarageVacancies</td>
+                <td>@Model.Property!.Address?.State</td>
+                <td>@Model.Property!.Address?.City</td>
+                <td>@Model.Property!.Address?.Street</td>
+                <td>@Model.Property!.Address?.Street1</td>
+                <td>@Model.Property!.Category?.Name</td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="row">
         <div class="col-12">

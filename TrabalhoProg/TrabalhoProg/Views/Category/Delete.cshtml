@@ -5,20 +5,22 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-6">Id:</div>
-        <div class="col-6">@Model.CategoryId</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Nome:</div>
-        <div class="col-6">@Model.Name</div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">Descrição:</div>
-        <div class="col-6">@Model.Description</div>
-    </div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.CategoryId</td>
+                <td>@Model.Name</td>
+                <td>@Model.Description</td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="row">
         <div class="col-12">

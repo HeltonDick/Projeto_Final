@@ -14,26 +14,29 @@
         public static int instanceCount = 0;
         public int objectCount = 0;
 
-        public bool Validate() {
+        public bool Validate()
+        {
             bool IsValid = true;
 
             IsValid = (PropertyId > 0) &&
                       (!string.IsNullOrEmpty(this.Name)) &&
                       (!string.IsNullOrEmpty(this.Description)) &&
-                      (BedRooms < 0) &&
-                      (GarageVacancies < 0) &&
+                      (BedRooms >= 0) && // corrigido: era < 0, deveria ser >= 0
+                      (GarageVacancies >= 0) && // corrigido
                       (Address != null) &&
                       (Category != null) &&
-                      (CurrentPricePerNight < 0);
+                      (CurrentPricePerNight >= 0); // corrigido
 
             return IsValid;
         }
 
-        public Property Retrieve() {
+        public Property Retrieve()
+        {
             return new Property();
         }
 
-        public void Save(Property property) {
+        public void Save(Property property)
+        {
         }
     }
 }

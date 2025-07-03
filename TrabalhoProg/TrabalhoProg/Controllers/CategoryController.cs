@@ -8,6 +8,7 @@ namespace TrabalhoProg.Controllers
     {
         private readonly IWebHostEnvironment environment;
         private readonly CategoryRepository _categoryRepository;
+
         public CategoryController(IWebHostEnvironment environment)
         {
             this.environment = environment;
@@ -15,38 +16,32 @@ namespace TrabalhoProg.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index() {
-            List<Category> categories = _categoryRepository.RetrieveAll();
+        public IActionResult Index()
+        {
+            var categories = _categoryRepository.RetrieveAll();
             return View(categories);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            Category categories = new Category();
-            return View(categories);
+            return View(new Category());
         }
 
         [HttpPost]
         public IActionResult Create(Category category)
         {
             _categoryRepository.Save(category);
-
-            List<Category> categories =
-                _categoryRepository.RetrieveAll();
-
-            return View("Index", categories);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult Delete(int? id)
         {
-            if (id is null || id.Value <= 0)
+            if (id == null || id <= 0)
                 return NotFound();
 
-            Category category=
-                _categoryRepository.Retrieve(id.Value);
-
+            var category = _categoryRepository.Retrieve(id.Value);
             if (category == null)
                 return NotFound();
 
@@ -56,7 +51,7 @@ namespace TrabalhoProg.Controllers
         [HttpPost]
         public IActionResult ConfirmDelete(int? id)
         {
-            if (id is null || id.Value <= 0)
+            if (id == null || id <= 0)
                 return NotFound();
 
             if (!_categoryRepository.DeleteById(id.Value))
@@ -68,7 +63,9 @@ namespace TrabalhoProg.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            Category category = _categoryRepository.Retrieve(id);
+            var category = _categoryRepository.Retrieve(id);
+            if (category == null)
+                return NotFound();
 
             return View(category);
         }
@@ -77,83 +74,49 @@ namespace TrabalhoProg.Controllers
         public IActionResult Update(Category category)
         {
             _categoryRepository.Update(category);
-            var categories = _categoryRepository.RetrieveAll();
-            return View("Index", categories);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult ExportDelimitatedFile()
         {
-            string fileContent = string.Empty;
-            foreach (Category c in CategoryData.Categories)
-            {
-                fileContent +=
-                    $"{c.CategoryId};{c.Name};{c.Description}\n";
-            }
+            string fileContent = string.Join("\n", CategoryData.Categories
+                .Select(c => $"{c.CategoryId};{c.Name};{c.Description}"));
 
             SaveFile(fileContent, "DelimitatedFile.txt");
-
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult ExportFixedFile()
         {
-            string fileContent = string.Empty;
-            foreach (Category c in CategoryData.Categories)
-            {
-                fileContent +=
-                    String.Format("{0:5}{1:64}", c.CategoryId, c.Name) +
-                    String.Format("{0:5}", c.Description) +
-                    "\n";
-
-            }
+            string fileContent = string.Join("\n", CategoryData.Categories
+                .Select(c => $"{c.CategoryId,-5}{c.Name,-64}{c.Description,-32}"));
 
             SaveFile(fileContent, "FixedFile.txt");
-
             return RedirectToAction("Index");
         }
 
         private bool SaveFile(string content, string fileName)
         {
-            bool ret = true;
-
             if (string.IsNullOrEmpty(content) || string.IsNullOrEmpty(fileName))
                 return false;
 
-            var path = Path.Combine(
-                environment.WebRootPath,
-                "TextFiles"
-            );
+            var path = Path.Combine(environment.WebRootPath, "TextFiles");
 
             try
             {
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
 
-                if (!System.IO.Directory.Exists(path))
-                    System.IO.Directory.CreateDirectory(path);
-
-                var filepath = Path.Combine(
-                    path,
-                    fileName
-                );
-
-                using (StreamWriter sw = System.IO.File.CreateText(filepath))
-                {
-                    sw.Write(content);
-                }
+                var filePath = Path.Combine(path, fileName);
+                System.IO.File.WriteAllText(filePath, content);
+                return true;
             }
-            catch (IOException ioEx)
+            catch
             {
-                string msg = ioEx.Message;
-                ret = false;
+                return false;
             }
-            catch (Exception ex)
-            {
-                string msg = ex.Message;
-                ret = false;
-            }
-
-            return ret;
         }
     }
 }

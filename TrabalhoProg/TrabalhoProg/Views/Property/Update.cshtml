@@ -1,62 +1,47 @@
-﻿@model List<TrabalhoProg.Modelo.Property>;
+﻿@model TrabalhoProg.ViewModels.PropertyViewModel
 
 @{
-    ViewData["Title"] = "Pagina Principal";
+    ViewData["Title"] = "Atualizar Propriedade";
 }
 
-<a asp-action="Create" asp-controller="Property" class="btn btn-light">
-    Nova Propriedade
-</a>
-<a asp-action="Delete" asp-controller="Property" class="btn btn-danger">
-    Deletar Propriedade
-</a>
+<div class="text-center">
+    <h1>Atualizar Propriedade</h1>
+    <div class="container">
+        <form method="post" asp-action="Update" asp-controller="Property">
+            <input type="hidden" asp-for="Property!.PropertyId" />
 
-@if (Model.Count > 0)
-{
-    <table class="table table-striped table-bordered table-hover">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">Quartos</th>
-                <th scope="col">Vagas</th>
-                <th scope="col">Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (TrabalhoProg.Modelo.Property property in Model)
-            {
-                <tr>
-                    <td>@property.PropertyId</td>
-                    <td>@property.Name</td>
-                    <td>@property.Description</td>
-                    <td>@property.BedRooms</td>
-                    <td>@property.GarageVacancies</td>
-                    <td>@property.CurrentPricePerNight</td>
+            <div class="form-group">
+                <label asp-for="Property.Name">Nome:</label>
+                <input type="text" class="form-control" asp-for="Property.Name" />
 
-                    <td>
-                        <a asp-action="Delete" asp-controller="Property" asp-route-id="@property.PropertyId" title="Excluir Endereco @property.Name">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
+                <label asp-for="Property.Description">Descrição:</label>
+                <input type="text" class="form-control" asp-for="Property.Description" />
 
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <div>
-        Não existem registros de Propriedades
+                <label asp-for="Property.BedRooms">Quartos:</label>
+                <input type="number" class="form-control" asp-for="Property.BedRooms" />
+
+                <label asp-for="Property.GarageVacancies">Vagas de Garagem:</label>
+                <input type="number" class="form-control" asp-for="Property.GarageVacancies" />
+
+                <label asp-for="Property.CurrentPricePerNight">Preço por Noite:</label>
+                <input type="number" class="form-control" step="0.01" asp-for="Property.CurrentPricePerNight" />
+
+                <hr />
+                <h4>Endereço</h4>
+                <select asp-for="Property.Address!.AddressId" class="form-control"
+                        asp-items="@(new SelectList(Model.Addresses, "AddressId", "Street"))">
+                    <option value="">Selecione um endereço</option>
+                </select>
+
+                <h4>Categoria</h4>
+                <select asp-for="Property.Category!.CategoryId" class="form-control"
+                        asp-items="@(new SelectList(Model.Categories, "CategoryId", "Name"))">
+                    <option value="">Selecione uma categoria</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            <a asp-action="Index" class="btn btn-danger">Voltar</a>
+        </form>
     </div>
-}
-
-<a asp-action="ExportDelimitatedFile" asp-controller="Property" class="btn btn-light">
-    Exportar Delimitado
-</a>
-
-<a asp-action="ExportFixedFile" asp-controller="Property" class="btn btn-light">
-    Exportar Fixo
-</a>
+</div>

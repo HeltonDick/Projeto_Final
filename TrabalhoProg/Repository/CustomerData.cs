@@ -1,8 +1,10 @@
 ﻿using TrabalhoProg.Modelo;
 
-namespace TrabalhoProg.Repository {
-    public class CustomerData {
-        public static List<Customer> Customers { get; set; } = [];
-        public static List<Property> Properties { get; set; } = [];
+namespace TrabalhoProg.Repository
+{
+    public static class CustomerData
+    {
+        public static List<Customer> Customers { get; set; } = new();
+        public static List<Property> Properties { get; set; } = new();
     }
 }
